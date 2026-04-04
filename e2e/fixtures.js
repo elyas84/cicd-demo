@@ -4,8 +4,13 @@ import { DashboardPage } from "./pages/DashboardPage";
 
 export const test = base.extend({
   page: async ({ page }, use, testInfo) => {
+    if (!process.env.BASE_URL) {
+      throw new Error(
+        "BASE_URL is undefined. Check if .env.test is formatted correctly and located in the root.",
+      );
+    }
     await page.goto("/");
-    if ((process.env.ENV = "prod")) {
+    if (process.env.ENV === "prod") {
       if (page.url() != process.env.BASE_URL) {
         await page.goto("/");
       }
