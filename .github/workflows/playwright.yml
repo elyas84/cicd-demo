@@ -24,19 +24,12 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          # Database/Backend
           MONGO_DB_URI: ${{ secrets.MONGO_DB_URI }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          # App URLs
-          BASE_URL: http://localhost:3000
-          NEXT_PUBLIC_BASE_URL: http://localhost:3000/api
-          NEXT_PUBLIC_UI: http://localhost:3000
-          # Credentials (Add these to GitHub Secrets first!)
           VALID_EMAIL_ADMIN: ${{ secrets.VALID_EMAIL_ADMIN }}
           VALID_PASSWORD_ADMIN: ${{ secrets.VALID_PASSWORD_ADMIN }}
-          VALID_EMAIL_USER: ${{ secrets.VALID_EMAIL_USER }}
-          VALID_PASSWORD_USER: ${{ secrets.VALID_PASSWORD_USER }}
-          NODE_ENV: test
+          ENV: test
+          BASE_URL: http://127.0.0.1:3000
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
