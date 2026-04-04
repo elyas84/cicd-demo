@@ -16,4 +16,8 @@ export class HomePage extends BasePage {
     await this.validateElementIsDisplayed(this.getStartedButton);
     await this.waitAndClick(this.getStartedButton);
   }
+
+  /**
+   * TOTO: Add more homepage related methods here
+   */
 }

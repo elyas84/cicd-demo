@@ -24,4 +24,7 @@ export class DashboardPage extends BasePage {
   async logout() {
     await this.waitAndClick(this.logoutButton);
   }
+  /**
+   * TODO: Add more dashboard page related methods here
+   */
 }
