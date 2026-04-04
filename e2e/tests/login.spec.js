@@ -5,7 +5,8 @@ test.describe("Authentication test-suites", () => {
   test(
     "login and logout with valid credentials - Admin user",
     { tag: "@smoke" },
-    async ({ loginPage, dashboardPage }) => {
+    async ({ loginPage, dashboardPage, homePage }) => {
+      await homePage.goToLoginPage();
       await loginPage.verifyLoginPageVisibility();
       await loginPage.login(
         process.env.VALID_EMAIL_ADMIN,
@@ -22,7 +23,8 @@ test.describe("Authentication test-suites", () => {
     test(
       `verify CTA case#${i + 1}`,
       { tag: "@smoke" },
-      async ({ dashboardPage, loginPage }) => {
+      async ({ dashboardPage, loginPage, homePage }) => {
+        await homePage.goToLoginPage();
         await loginPage.verifyLoginPageVisibility();
         await loginPage.login(user.email, user.password);
         await dashboardPage.verifyDashboardPageVisibility();
