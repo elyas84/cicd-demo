@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "npx rimraf e2e/test-output e2e/playwright-report e2e/test-results",
+    "test": "npm run clean && npx playwright test",
+    "smoke": "npx playwright test --grep @smoke",
+    "test:local": "npm run clean && ENV=test npx playwright test",
+    "test:prod": "npm run clean && ENV=prod npx playwright test"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.0",
     "jose": "^6.0.10",
     "mongoose": "^8.23.0",
     "next": "16.2.2",

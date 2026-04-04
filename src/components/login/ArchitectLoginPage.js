@@ -44,7 +44,11 @@ export default function ArchitectLoginPage() {
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           {error ? (
-            <p className="text-error text-center text-sm" role="alert">
+            <p
+              className="text-error text-center text-sm"
+              role="alert"
+              testdata-id="login-error-message"
+            >
               {error}
             </p>
           ) : null}

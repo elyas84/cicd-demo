@@ -2,10 +2,21 @@
 import { defineConfig, devices } from "@playwright/test";
 
 /**
+ * Read environment variables from file.
+ * https://github.com/motdotla/dotenv
+ */
+import dotenv from "dotenv";
+import path from "path";
+// dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+const env = process.env.ENV || "test";
+dotenv.config({ path: path.resolve(__dirname, `.env.${env}`) });
+
+/**
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "./tests",
+  testDir: "./e2e/tests/",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -20,7 +31,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: "http://localhost:3000",
+    baseURL: process.env.BASE_URL,
 
     /* Collect trace when retrying the failed test. */
     trace: "on-first-retry",
@@ -36,27 +47,21 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    // {
+    //   name: "webkit",
+    //   use: { ...devices["Desktop Safari"] },
+    // },
   ],
 
-  /* Run your local dev server before starting the tests.
-     This is critical for GitHub Actions to work!
-  */
-  webServer: {
-    /* Change 'npm run dev' to 'npm start' if that is what boots your app.
-       Playwright will run this command in the background.
-    */
-    command: "npm run dev",
-    url: "http://localhost:3000",
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000, // Wait 2 minutes for the server to start
-  },
+  /* Run your local dev server before starting the tests */
+  // webServer: {
+  //   command: 'npm run start',
+  //   url: 'http://localhost:3000',
+  //   reuseExistingServer: !process.env.CI,
+  // },
 });
