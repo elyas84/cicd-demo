@@ -126,6 +126,34 @@ export default function ArchitectLoginPage() {
                 </p>
               </div>
             </div>
+
+            <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 p-4 backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+                Test credentials
+              </p>
+              <div className="mt-3 grid gap-3 text-sm text-slate-100 sm:grid-cols-2">
+                <div className="rounded-xl border border-white/10 bg-slate-950/30 p-3">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+                    Admin
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-slate-200">
+                    admin@test.com / 123456E
+                  </p>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-slate-950/30 p-3">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+                    User
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-slate-200">
+                    john@test.com / 123456J
+                  </p>
+                </div>
+              </div>
+              <p className="mt-3 text-xs leading-5 text-slate-300">
+                These accounts are seeded for the sandbox, so you can jump
+                straight into testing.
+              </p>
+            </div>
           </section>
 
           <section className="relative">
