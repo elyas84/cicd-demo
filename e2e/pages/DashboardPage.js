@@ -4,7 +4,7 @@ export class DashboardPage extends BasePage {
   constructor(page) {
     super(page);
     this.page = page;
-    this.dasboardPageTitle = page.locator("//h1[text()='Dashboard']");
+    this.dasboardPageTitle = page.locator("//h1[contains(text(),'Welcome')]");
     this.logoutButton = page.locator("//button[text()='Log out']");
   }
 

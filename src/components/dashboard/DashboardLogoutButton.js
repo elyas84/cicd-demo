@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Spinner from "../spinner";
 
 export default function DashboardLogoutButton({ className = "mt-8 w-full" }) {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function DashboardLogoutButton({ className = "mt-8 w-full" }) {
       onClick={handleLogout}
       className={`bg-primary text-on-primary hover:opacity-90 rounded-md py-2.5 text-sm font-semibold transition-opacity disabled:opacity-60 ${className}`}
     >
-      {pending ? "Logging out…" : "Log out"}
+      {pending ?  <Spinner /> : "Log out"}
     </button>
   );
 }
