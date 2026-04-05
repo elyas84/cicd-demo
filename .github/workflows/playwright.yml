@@ -26,6 +26,8 @@ jobs:
         env:
           MONGO_DB_URI: ${{ secrets.MONGO_DB_URI }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          VALID_EMAIL_ADMIN: ${{ secrets.VALID_EMAIL_ADMIN }}
+          VALID_PASSWORD_ADMIN: ${{ secrets.VALID_PASSWORD_ADMIN }}
           ENV: test
           BASE_URL: http://127.0.0.1:3000
 
