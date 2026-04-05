@@ -1,14 +1,14 @@
 [
   {
-    "email": "elyasarkint@gmail.com",
+    "email": "admin@test.com",
     "password": "123456E"
   },
   {
-    "email": "jesur@test.com",
+    "email": "John@test.com",
     "password": "123456J"
   },
   {
-    "email": "flora@test.com",
+    "email": "Mike@test.com",
     "password": "123456F"
   }
 ]

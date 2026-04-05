@@ -3,7 +3,7 @@ import { BasePage } from "./BasePage.js";
 export class LoginPage extends BasePage {
   constructor(page) {
     super(page);
-    this.loginSectionTitle = page.locator("//h1[text()='Log in']");
+    this.loginSectionTitle = page.locator("//h2[text()='Sign in']");
     this.emailInput = page.locator("//input[@id='email']");
     this.passwordInput = page.locator("//input[@id='password']");
     this.loginButton = page.locator("//button[@type='submit']");

@@ -34,7 +34,7 @@ function lastLoginRelative(isoDate) {
 }
 
 export default async function AdminPage() {
-  await requireAdmin();
+  const { session } = await requireAdmin();
 
   await connectDB();
   const users = await User.find()
@@ -62,5 +62,5 @@ export default async function AdminPage() {
     };
   });
 
-  return <AdminUserListPage users={rows} />;
+  return <AdminUserListPage users={rows} currentUserId={String(session.id)} />;
 }
