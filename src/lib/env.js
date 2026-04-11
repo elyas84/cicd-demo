@@ -5,3 +5,6 @@ export const requiredEnv = (key) => {
   }
   return value;
 };
+
+// Example usage:
+// const dbPassword = requiredEnv('DB_PASSWORD');
