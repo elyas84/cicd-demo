@@ -2,6 +2,7 @@ import { test as base } from "@playwright/test";
 import { LoginPage } from "./pages/LoginPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { HomePage } from "./pages/HomePage";
+import { RegisterPage } from "./pages/RegisterPage"; 
 
 export const test = base.extend({
   page: async ({ page }, use, testInfo) => {
@@ -39,4 +40,14 @@ export const test = base.extend({
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
   },
+
+
+  registerPage: async ({ page }, use) => {
+    await use(new RegisterPage(page));
+  }
+  ,
+  welcomePage: async ({ page }, use) => {
+    await use(new WelcomePage(page));
+  },
+
 });

@@ -41,4 +41,12 @@ export class LoginPage extends BasePage {
     await this.validateElementIsDisplayed(this.loginErrorMessage);
     return await this.loginErrorMessage.textContent();
   }
+
+  async goToRegister() {
+  await this.validateElementIsDisplayed(this.createAccountLink);
+  await this.waitAndClick(this.createAccountLink);
+  }
+  
 }
+
+
