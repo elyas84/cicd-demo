@@ -4,7 +4,7 @@ test.describe("Authentication test-suites", () => {
   // TC - Login-1
   test(
     "login and logout with valid credentials - Admin user",
-    { tag: "@smoke" },
+    { tag: ["@smoke", "@e2e"] },
     async ({ loginPage, dashboardPage, homePage }) => {
       await homePage.goToLoginPage();
       await loginPage.verifyLoginPageVisibility();

@@ -10,6 +10,7 @@
     "clean": "npx rimraf e2e/test-output e2e/playwright-report e2e/test-results",
     "test": "npm run clean && npx playwright test",
     "smoke": "npx playwright test --grep @smoke", 
+    "e2e": "npx playwright test --grep @e2e", 
     "test:local": "npm run clean && ENV=test npx playwright test",
     "test:prod": "npm run clean && ENV=prod npx playwright test"
   },
