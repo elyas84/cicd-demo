@@ -34,3 +34,5 @@ test.describe("Authentication test-suites", () => {
     );
   });
 });
+
+// This is for negative test cases, which are not part of the current scope but can be implemented similarly by providing invalid credentials and verifying error messages.
